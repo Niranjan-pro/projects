@@ -488,7 +488,7 @@
   position: relative;
   z-index: 999999999999;
   width: 100%;
- min-height: 220vh;
+ min-height: 260vh;
   background-color: rgba(255, 0, 0, 0.144);
   display: flex;
   justify-content: center;
