@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="index.css">
+  <link rel="icon" href="logo.png">
+  <!-- =====  CDN Link ===== -->
+</head>
+
+<body>
+  <!-- link external js file -->
+  <script src="index.js"></script>
+  <!-- HOme page html -->
+  <section class="home" id="home">
+
+    <div class="navbar">
+      <div class="hometittle">
+        <a href="https://niranjandahal.me">
+          <span class="selectedtext">N</span>iranjan Dahal
+        </a>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <ul class="menu">
+        <li class="menuli">
+          <a href="#home" class="active">Home</a>
+        </li>
+        <li class="menuli">
+          <a href="#blog">Blog</a>
+        </li>
+        <li class="menuli">
+          <a href="#workshowcase">Work</a>
+        </li>
+        <li class="menuli">
+          <a href="#ndcontact">Contact</a>
+        </li>
+      </ul>
+    </div>
+
+
+    <div class="welcome">
+      <div class="hometittle1">
+        <h1>I am a
+          <span class="seperatetext">Flutter Developer</span>
+        </h1>
+      </div>
+      <div class="hometittle2">
+        <p>
+          This is my personal portfolio website. Here you can find
+          information about me, my work, and my blog.
+        </p>
+      </div>
+      <div class="button1">
+        <div class="ndhirenow">
+          <button class="btn1">
+            <a href="#workshowcase">My Work</a>
+          </button>
+        </div>
+        <div class="ndexplore">
+          <button class="btn1">
+            <a href="https://dahalniranjan.com.np">Explore More</a>
+          </button>
+        </div>
+      </div>
+  </section>
+  <script>
+    hamburger = document.querySelector(".hamburger");
+    nav = document.querySelector("nav");
+    hamburger.onclick = function () {
+      nav.classList.toggle("active");
+    }
+  </script>
+  <!-- <section class="blog">
+  </section> -->
+  <section class="blog" id="blog">
+    <div class="blogtitle">
+      <h1>Some of My Blog</h1>
+    </div>
+    <div class="blogsection">
+      <div class="card">
+        <div class="content">
+          <div class="first">
+            <div class="imgBx">
+              <img src="https://i.ibb.co/z58tHgQ/loginflutter.jpg">
+            </div>
+            <div class="contentBx">
+              <h3>Flutter</h3>
+              <p> Login and Signup Page</p>
+            </div>
+          </div>
+          <div class="second">
+            <h2>
+              <img src=" https://i.ibb.co/FHvhdJP/flutterlogo-yd0-LSu7-removebg-preview.png" width="400" height="300">
+            </h2>
+            <h3> Step 1</h3>
+            <p>
+              Learn how to create a login and signup page in Flutter with this beginner-friendly tutorial.These pages
+              provide a secure way for users to access the data. Flutter provides several widgets & libraries that can
+              be used to create pages, & with a few simple steps, you can create a login and signup page
+              <a href="https://www.niranjandahal.com.np/2022/01/flutter-loginsign-up-ui-create-easily.html">
+                Read More
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="content">
+          <div class="first">
+            <div class="imgBx">
+              <img src="https://i.ibb.co/12zkYBv/istockphoto-1324380506-612x612.jpg">
+            </div>
+            <div class="contentBx">
+              <h3>Virtual Reality</h3>
+              <p> Use in Education,entertainment</p>
+            </div>
+          </div>
+          <div class="second">
+            <h2>
+              <img src="https://i.ibb.co/tckTwLw/istockphoto-1324380506-612x612-removebg-preview.png" width="450"
+                height="450">
+            </h2>
+            <h3> Step 2</h3>
+            <p>
+              VR and AR are technologies that offer immersive experiences in fields such as education, entertainment,
+              real estate, and tourism. While they have many benefits, there are also concerns about their potential
+              negative effects and misuse.
+              <a href="https://www.niranjandahal.com.np/2023/01/the-use-of-virtual-and-augmented.html"> Read More</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="content">
+          <div class="first">
+            <div class="imgBx">
+              <img src="https://i.ibb.co/WtvPR8x/aaa.jpg">
+            </div>
+            <div class="contentBx">
+              <h3> Flutter</h3>
+              <p> Movie Appllication</p>
+            </div>
+          </div>
+          <div class="second">
+            <h2>
+              <img src=" https://i.ibb.co/FHvhdJP/flutterlogo-yd0-LSu7-removebg-preview.png" width="400" height="300">
+            </h2>
+            <h3> Movie App</h3>
+            <p>
+              Introducing my latest Flutter app with a powerful backend - the ultimate destination for movie buffs!
+              Discover the latest trending movies TV shows with details like release dates, budgets, and popularity
+              ratings. Get ready to experience an exciting comprehensive movie Detail app, right at your fingertips.
+              <a href="https://www.dahalniranjan.com.np/2022/11/movie-app-flutter-with-description-api.html">
+                Read More
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript">
+      VanillaTilt.init(document.querySelectorAll(".card"), {
+        max: 25,
+        speed: 400,
+        glare: true,
+        "max-glare": 1,
+      });
+    </script>
+  </section>
+  <!-- <! section blog ends here> -->
+  <!-- <! section blog ends here> -->
+
+  <!-- THird my section starts herer -->
+  <section class="workshowcase" id="workshowcase">
+    <div class="timeline">
+      <!-- <script>
+        const timeline = document.querySelector('.timeline');
+        
+        const observer = new IntersectionObserver(entries => {
+          if (entries[0].isIntersecting) {
+            timeline.classList.add('moveline');
+            observer.unobserve(timeline); // stop observing once animation starts
+          }
+        });
+        
+        observer.observe(timeline);
+      </script> -->
+      <div class="container left-container">
+        <img src=" https://s3.amazonaws.com/freebiesupply/large/2x/blogger-logo-transparent.png ">
+        <div class="text-box">
+          <h2>Started Blogger.</h2>
+          <small>2018-present</small>
+          <p>I have experience using Blogger to create and manage blogs, including designing custom templates, writing
+            and editing posts, and optimizing for search engine visibility....</p>
+          <span class="left-container-arrow"></span>
+
+        </div>
+      </div>
+
+      <div class="container right-container">
+        <img src=" https://th.bing.com/th/id/OIP.Fa5WtVJ8UZvt40dsdy_4PAAAAA?pid=ImgDet&rs=1">
+
+        <div class="text-box">
+          <h2>Web Development.</h2>
+          <small>2019-present</small>
+          <p>I am proficient in HTML, CSS, JavaScript, PHP, and MySQL. I have worked on several projects in web
+            development, including building and maintaining websites and web applications...</p>
+          <span class="right-container-arrow"></span>
+
+        </div>
+      </div>
+
+      <div class="container left-container">
+        <img src="  https://i.ibb.co/FHvhdJP/flutterlogo-yd0-LSu7-removebg-preview.png">
+
+        <div class="text-box">
+          <h2>Mobile App Development</h2>
+          <small>2021-present</small>
+          <p>I have experience in developing mobile applications using Flutter framework. I have worked on several
+            projects in mobile app development, including building and publishing apps on Google Play Store...</p>
+          <span class="left-container-arrow"></span>
+
+        </div>
+      </div>
+
+      <div class="container right-container">
+        <img src=" https://th.bing.com/th/id/R.bf6d72e220e13dbeb2136a874aa69a30?rik=OwrN8ayF3GG5qA&pid=ImgRaw&r=0 ">
+
+        <div class="text-box">
+          <h2>UI/UX Design.</h2>
+          <small>2020-present</small>
+          <p>I have skills in designing user interfaces and user experiences for websites and mobile apps. I have worked
+            on several projects in UI/UX design, including creating wireframes, prototypes, and mockups....</p>
+          <span class="right-container-arrow"></span>
+
+        </div>
+      </div>
+
+      <div class="container left-container">
+        <img src="https://th.bing.com/th/id/OIP.AImBPYY04Nae0fWSmHLL_gAAAA?pid=ImgDet&rs=1 ">
+
+        <div class="text-box">
+          <h2>MySQL Skills</h2>
+          <small>2020-present</small>
+          <p>I have experience building mobile apps using Flutter and integrating them with SQL databases. I have
+            developed apps that use SQL to store and retrieve data, such as user profiles, settings, and preferences....
+          </p>
+          <span class="left-container-arrow"></span>
+
+        </div>
+      </div>
+
+      <div class="container right-container">
+        <img src=" https://th.bing.com/th/id/OIP.iGasX0uK5LzWzOa9PFqasgHaHa?pid=ImgDet&rs=1 ">
+
+        <div class="text-box">
+          <h2>Php Mysql Flutter</h2>
+          <small>2021-present</small>
+          <p>"I have a proven track record of utilizing my expertise in PHP programming and MySQL database management to
+            develop dynamic mobile applications using Flutter framework, enabling users to perform various CRUD (create,
+            read, update, delete) operations and interact with the data in real-time."..</p>
+          <span class="right-container-arrow"></span>
+
+        </div>
+      </div>
+
+      <div class="container left-container">
+        <img src=" https://th.bing.com/th/id/OIP.8B4kCn848bnXERkqj3dD3gHaFj?pid=ImgDet&rs=1">
+
+        <div class="text-box">
+          <h2>Backend </h2>
+          <small>2022-present</small>
+          <p>I have strong skills in backend development using Firebase, PHP/MySQL, and cloud computing services. I have
+            developed and maintained back-end systems for various web and mobile applications, enabling real-time data
+            exchange, user authentication, and data storage and retrieval...</p>
+          <span class="left-container-arrow"></span>
+        </div>
+      </div>
+
+
+      <!-- <div class="container right-container">
+        <img src=" https://i.ibb.co/FHvhdJP/flutterlogo-yd0-LSu7-removebg-preview.png ">
+
+        <div class="text-box">
+          <h2>sample Inc.</h2>
+          <small>2018 2019</small>
+          <p>The success of every websites depends on search engine optimisation and digital
+            marketing strategy. If you are on first page of all major search...</p>
+          <span class="right-container-arrow"></span>
+
+        </div>
+      </div> -->
+
+    </div>
+  </section>
+
+
+
+
+
+  <!-- fourth my section starts herer -->
+  <!-- fourth my section starts herer -->
+  <!-- fourth my section starts herer -->
+  <!-- fourth my section starts herer -->
+  <!-- fourth my section starts herer -->
+  <section class="ndcontact" id="ndcontact">
+    <div class="box-wrapper">
+      <div class="info-wrap">
+        <h2 class="info-title">Contact Information</h2>
+        <h3 class="info-sub-title">Fill up the form and our Team will get back to you within 24 hours</h3>
+        <ul class="info-details">
+          <li>
+            <i class="fas fa-phone-alt"></i>
+            <span>Phone:</span>
+            <a href="tel:+ 97452852">+ 97452852xx</a>
+          </li>
+          <li>
+            <i class="fas fa-paper-plane"></i>
+            <span>Email:</span>
+            <a
+              href="https://mail.google.com/mail/?view=cm&source=mailto&to=dahalniranjan24@gmail.com&body=Description%20here%20&su=Your%20Subject%20here%20!">Write
+              an Email</a>
+          </li>
+          <li>
+            <i class="fas fa-globe"></i>
+            <span>Website:</span>
+            <a href="#">niranjandahal.com.np</a>
+          </li>
+        </ul>
+        <ul class="social-icons">
+          <li>
+            <a href="https://www.facebook.com/niranjandahal76">
+              <i class="fab fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/niranjannd">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/niranjandahal76">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/niranjan-dahal-77463021a/">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="form-wrap">
+        <form action="https://errorreality.000webhostapp.com/insertdb.php" method="POST">
+          <h2 class="form-title">Send me a message</h2>
+          <div class="form-fields">
+            <div class="form-group">
+              <input type="text" class="fname" placeholder="First Name">
+            </div>
+            <div class="form-group">
+              <input type="text" class="lname" placeholder="Last Name">
+            </div>
+            <div class="form-group">
+              <input type="email" name="firstcolumndata" class="email" placeholder="Mail">
+            </div>
+            <div class="form-group">
+              <input type="number" name="secondcolumndata" placeholder="Phone">
+            </div>
+            <div class="form-group">
+              <input type="text" name="thirdcolumndata" placeholder="Write your message">
+              <!-- <textarea name="thirdcolumndata" id="" placeholder="Write your message"></textarea> -->
+            </div>
+          </div>
+          <input type="submit" value="Send Message" class="submit-button">
+        </form>
+      </div>
+    </div>
+  </section>
+  <!-- <section class="fotor" id="fotor"> -->
+  <section class="lastsec">
+    <footer class="footer">
+      <div class="waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
+      </div>
+      <!-- <ul class="social-icon">
+        <li class="social-icon__item">
+          <a class="social-icon__link" href="https://www.facebook.com/niranjandahal76">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </a>
+        </li>
+        <li class="social-icon__item">
+          <a class="social-icon__link" href="https://youtube.com/niranjannd">
+            <ion-icon name="logo-YouTube"></ion-icon>
+          </a>
+        </li>
+        <li class="social-icon__item">
+          <a class="social-icon__link" href="https://twitter.com/niranjandahal76
+          ">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </a>
+        </li>
+        <li class="social-icon__item">
+          <a class="social-icon__link" href="https://www.linkedin.com/in/niranjan-dahal-77463021a/">
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </a>
+        </li>
+        <li class="social-icon__item">
+          <a class="social-icon__link" href="https://www.instagram.com/niranjandahal76/">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+        </li>
+      </ul> -->
+      <ul class="menu">
+        <li class="menu__item">
+          <a class="menu__link" href="#">Home</a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link" href="#blog">About</a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link" href="#ndcontact">Contact</a>
+        </li>
+      </ul>
+      <p>&copy;2022 Niranjan Dahal | All Rights Reserved</p>
+    </footer>
+  </section>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <!-- </section> -->
+</body>
+
+</html>
