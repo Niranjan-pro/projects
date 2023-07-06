@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flutter Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+  <style>
+    /* Reset CSS */
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Global styles */
+    body {
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.5;
+      background-color: #f1f1f1;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Navigation bar */
+    /* Navbar */
+    nav {
+      background-color: #333;
+      padding: 10px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    nav ul li {
+      margin-right: 20px;
+    }
+
+    nav ul li a {
+      font-size: 16px;
+      color: #fff;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ccc;
+    }
+
+    /* Main content */
+    main {
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .project-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: 400px;
+      overflow: hidden;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      margin: 20px;
+      width: 400px;
+      background-color: #333;
+      color: #fff;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .project-image-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .project-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.9;
+    }
+
+    .project-title {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      margin: 0;
+      padding: 5px 10px;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 5px;
+    }
+
+    .project-content {
+      padding: 10px;
+      background-color: #ffffffc7;
+    }
+
+    .project-description {
+      color: #333;
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .view-project-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 12px;
+      background-color: #000;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .view-project-btn:hover {
+      background-color: #222;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .modal-content {
+      background-color: rgba(128, 128, 128, 0.464);
+      color: #333;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 5px;
+      max-width: 85%;
+      text-align: center;
+    }
+
+    .modal-close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .modal-close:hover,
+    .modal-close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .project-photos {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .project-photos img {
+      width: 100%;
+      max-width: 150px;
+      height: auto;
+      margin: 0 10px;
+      border-radius: 5px;
+    }
+
+    .project-links {
+      margin-top: 20px;
+    }
+
+    /* Footer */
+    #contact {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .contact-section p {
+      margin: 0;
+    }
+
+    /* Responsive design */
+    @media screen and (max-width: 768px) {
+      .project-card {
+        height: auto;
+      }
+
+      .project-image {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#Blogs">Blogs</a></li><br>
+      <li><a href="#social"><i class="fab fa-github"></i></a></li>
+      <li><a href="#social"><i class="fab fa-youtube"></i></a></li>
+      <li><a href="#social"><i class="fab fa-linkedin"></i></a></li>
+      <li><a href="#social"><i class="fab fa-twitter"></i></a></li>
+      <li><a href="#social"><i class="fab fa-facebook"></i></a></li>
+
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Flutter Portfolio</h1>
+  </header>
+
+  <main id="projects">
+    <!-- Project one -->
+    <div class="project-card">
+      <div class="project-image-wrapper">
+        <img class="project-image" src="./Images/projectoneimages.webp" alt="Project 1">
+        <h2 class="project-title">VR Application</h2>
+      </div>
+      <div class="project-content">
+        <p class="project-description">Explore - Discover and enjoy the beautiful places of Nepal from home</p>
+        <a class="view-project-btn" href="#modal1">View Full Project</a>
+      </div>
+    </div>
+
+    <!-- Project two -->
+    <div class="project-card">
+      <div class="project-image-wrapper">
+        <img class="project-image" src="./Images/Project-one.png" alt="Project 2">
+        <h2 class="project-title">MovieHunt Application</h2>
+      </div>
+      <div class="project-content">
+        <p class="project-description">Details of every movie with recommendations</p>
+        <a class="view-project-btn" href="#modal2">View Full Project</a>
+      </div>
+    </div>
+    <!--  -->
+    <!-- Repeat the project card structure for each of your projects -->
+  </main>
+
+  <!-- Modal 1 -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <img class="project-image" src="" alt="Project 1">
+      <div class="project-content">
+        <h2 class="project-title">Explore Places Virtually</h2>
+        <p class="project-description">This is the simple project in which you can explore the places virtually.
+          Initially there are only some places of nepal whcih you can explore however with time it will be
+          updated to show many place vr with high resolution and will constanly be updated.</p>
+        <br><br>
+        <h2>Application Screenshots</h2>
+        <div class="project-photos">
+          <img src="photo1.jpg" alt="Project 1 Screenshot">
+          <img src="photo2.jpg" alt="Project 1 Screenshot">
+          <img src="photo3.jpg" alt="Project 1 Screenshot">
+        </div>
+        <p class="project-details">
+        <h2>Key Features:</h2>
+        <ul>
+          <li><strong>360° View of Places in Nepal:</strong> Step into a world of panoramic views and stunning
+            visuals. Experience the awe-inspiring beauty of Nepal's mountains, rivers, temples, and cities
+            with our extensive collection of 360-degree videos. Each video is meticulously captured to
+            provide an immersive and realistic experience, transporting you to the heart of Nepal's most
+            iconic locations.</li>
+          <li><strong>User-Contributed Places:</strong> We believe in the power of community collaboration. As
+            a user of our VR Application, you have the opportunity to contribute to our ever-growing
+            database of places in Nepal. Share your knowledge and love for your favorite spots by adding
+            detailed information, descriptions, images, and location data. Your contributions will enrich
+            the application's content and help fellow users discover hidden gems they might have otherwise
+            missed.</li>
+          <li><strong>Curated and Validated Content:</strong> To ensure the highest quality and accuracy, our
+            dedicated team carefully analyzes and validates each user-contributed place before adding it to
+            the application's database. This meticulous process guarantees that the showcased places meet
+            our standards of authenticity and provide an enriching experience for all users.</li>
+          <li><strong>Interactive and Informative Experience:</strong> Discover Nepal's rich cultural heritage
+            and learn fascinating facts about each place through our interactive features. Dive into
+            detailed descriptions, historical insights, and engaging narratives that accompany each VR
+            experience. Expand your knowledge of Nepal's diverse landscapes and vibrant traditions as you
+            embark on your virtual exploration.</li>
+          <li><strong>Seamless Navigation:</strong> Our user-friendly interface and intuitive controls make
+            navigating the VR Application a breeze. Move effortlessly between different locations, access
+            additional information, and customize your journey according to your interests. Whether you're
+            an adventure seeker, history enthusiast, or nature lover, our application offers a tailored
+            experience to suit your preferences.</li>
+          <li><strong>Spectacular Visuals and Audio:</strong> Immerse yourself in the sights and sounds of
+            Nepal with stunning visuals and immersive audio. Feel the wind as you stand atop a majestic
+            peak, hear the chants of ancient temples, and witness the vibrant colors of traditional
+            festivals. Our VR Application aims to recreate the sensory experience of being physically
+            present in Nepal, allowing you to appreciate its beauty from a new perspective.</li>
+          <li><strong>Constant Updates and New Discoveries:</strong> Our commitment to providing a dynamic and
+            ever-evolving experience means that new content is regularly added to the VR Application. Stay
+            tuned for updates, as we continue to expand our collection of places in Nepal, ensuring there's
+            always something new and exciting to explore.</li>
+        </ul>
+        </p>
+        <p>Embark on a virtual journey through Nepal's cultural heritage, natural wonders, and hidden treasures.
+          Download the VR Application now and let us transport you to a world of breathtaking beauty and
+          unforgettable experiences. Join our community of explorers, contribute your knowledge, and together,
+          let's celebrate the beauty of Nepal in virtual reality.</p>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/your-username/project1" target="_blank">GitHub</a> |
+        <a href="https://www.youtube.com/watch?v=your-video-id" target="_blank">YouTube</a>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- Modal 2 -->
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <img class="project-image" src="./Images/project-one-simple.png" alt="Project 2">
+      <div class="project-content">
+        <h2 class="project-title">Movie Hunt </h2>
+        <p class="project-description">Movie Application - Explore, Discover, and Enjoy Your Favorite Movies and
+          TV Series Know about trending movies/series with full description rating review and
+          recommend other simimlar movies/series .</p>
+        <br><br>
+        <p>The Movie Application is a feature-rich and user-friendly mobile application built using Flutter and
+          powered by the TMDB API. It offers a comprehensive platform for movie enthusiasts to explore,
+          discover, and enjoy a wide range of movies and TV series from around the world. With its sleek
+          design, intuitive interface, and advanced functionalities, the application provides an immersive and
+          seamless movie-watching experience.</p>
+        <h2>Application Screens</h2>
+        <div class="project-photos">
+          <img src="./Images/p2fav.jpg" alt="Project 2 Photo">
+          <img src="./Images/p2menu.jpg" alt="Project 2 Photo">
+          <img src="./Images/p2upcomming.jpg" alt="Project 2 Photo">
+          <img src="./Images/p2serach.jpg" alt="Project 2 Photo">
+          <img src="./Images/p2favdesc.jpg" alt="Project 2 Photo">
+        </div>
+        <p class="project-details">
+        <h2>Key Features:</h2>
+        <ul>
+          <li>🎥 Trending Movies and TV Series: Stay up-to-date with the latest trends in the film industry by
+            exploring the daily and weekly trending movies and TV series. Discover the most popular and
+            buzz-worthy content right at your fingertips.</li>
+          <li>🔍 Search Bar: Easily find your favorite movies and TV series using the powerful search bar.
+            Simply enter the title, genre, or any relevant keywords, and the application will provide
+            instant results, ensuring you never miss out on your preferred content.</li>
+          <li>🎯 Personalized Recommendations: The application utilizes the TMDB API to offer personalized
+            recommendations based on your viewing history and preferences. Discover new movies and TV series
+            that match your interests, allowing you to expand your horizons and explore diverse content.
+          </li>
+          <li>📚 Detailed Information: Dive deep into movies and TV series with comprehensive details and
+            information. Access detailed descriptions, cast and crew details, release dates, runtime,
+            revenue, ratings, and reviews, empowering you to make informed decisions about what to watch.
+          </li>
+          <li>▶️ YouTube Trailers: Experience the excitement of upcoming movies and popular TV series by
+            watching high-quality trailers directly within the application. Get a sneak peek into the
+            storyline, visual effects, and overall cinematic experience before making your selection.</li>
+          <li>🎬 Inbuilt Playback: Enjoy a seamless and immersive viewing experience with the inbuilt playback
+            feature. Stream movies and TV series effortlessly, with support for different video qualities
+            and playback controls, providing you with complete control over your entertainment.</li>
+          <li>⭐ Favorites: Create your personalized collection of favorite movies and TV series by marking
+            them as favorites. Easily access and revisit your preferred content whenever you want, saving
+            you time and effort in searching for them again.</li>
+          <li>👤 User Profiles and Avatars: Customize your user profile with a unique avatar and personalize
+            your movie-watching experience. Showcase your identity and create a sense of belonging within
+            the application's community.</li>
+          <li>📝 Blogs Section: Engage with fellow movie enthusiasts through the blogs section. Share your
+            thoughts, reviews, and recommendations, and participate in discussions to enhance your movie
+            knowledge and connect with like-minded individuals.</li>
+        </ul>
+        <br><br>
+        The Movie Application is the ultimate companion for movie lovers, providing a comprehensive and
+        enjoyable experience for discovering, exploring, and immersing yourself in the world of movies and
+        TV series. Its user-friendly interface, extensive database, and advanced features make it the go-to
+        platform for movie enthusiasts of all ages.
+        <br><br>
+        Immerse yourself in a world of captivating storytelling, breathtaking visuals, and unforgettable
+        performances with the Movie Application. Download it now and embark on an incredible cinematic
+        journey like never before!
+        </p>
+        <div class="project-links">
+          <a href="https://github.com/niranjandahal/Flutter_Moive_fullapp" target="_blank">GitHub</a> |
+          <a href="https://www.youtube.com/watch?v=your-video-id" target="_blank">YouTube</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer id="contact">
+    <div class="contact-section">
+      <!-- <h2>Contact Me</h2> -->
+      <p>© 2023 Niranjan Dahal. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+  <script>
+    // Modal functionality
+    const modalTriggers = document.querySelectorAll('.view-project-btn');
+    const modals = document.querySelectorAll('.modal');
+    const modalCloseButtons = document.querySelectorAll('.modal-close');
+
+    modalTriggers.forEach((trigger, index) => {
+      trigger.addEventListener('click', () => {
+        modals[index].style.display = 'block';
+      });
+    });
+
+    modalCloseButtons.forEach((button) => {
+      button.addEventListener('click', (event) => {
+        const modal = event.target.closest('.modal');
+        modal.style.display = 'none';
+      });
+    });
+
+    window.addEventListener('click', (event) => {
+      if (event.target.classList.contains('modal')) {
+        event.target.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+
+</html>
